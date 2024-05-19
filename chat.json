@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Young Sheldon",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "message": "Why are you trying to convince me to believe in God? You don't believe in God."
+            },
+            {
+                "speaker": "B",
+                "message": "I don't, but the precision of the universe at least makes its logical conclude there is a creator."
+            },
+            {
+                "speaker": "A",
+                "message": "Baby, I appreciate what you're trying to do, but the logic here... and my problem is here."
+            },
+            {
+                "speaker": "B",
+                "message": "Well, there are 5 billion people on this planet, and you're the perfect mom for me. What are the odds of that?"
+            },
+            {
+                "speaker": "A",
+                "message": "Oh, thank you Lord, for this little Boy."
+            }
+        ]
+    },
+    {
+        "title": "Atheist Double Standard",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "message": "Pardon, I want 100% evidence that Jesus raised from the dead. If you cannot give me that, then that makes the Bible incredible."
+            },
+            {
+                "speaker": "B",
+                "message": "Ma'am, I can't. I don't base my life on 100% proof."
+            },
+            {
+                "speaker": "A",
+                "message": "Well, maybe that's your problem."
+            },
+            {
+                "speaker": "B",
+                "message": "Oh, you do? You base your life on 100% proof?"
+            },
+            {
+                "speaker": "A",
+                "message": "Yes."
+            },
+            {
+                "speaker": "B",
+                "message": "Oh, really?"
+            },
+            {
+                "speaker": "A",
+                "message": "That's why I'm skeptical of everything, really."
+            },
+            {
+                "speaker": "B",
+                "message": "So, that means you take a chemistry kit to the pharmacy and when the pharmacist hands you that bottle of medicine, you chemically analyze it to make sure there's no poison in there, right? Because unless you have 100% proof, you would never dare take that pill and put it in your mouth, as maybe the pharmacist put poison in there."
+            },
+            {
+                "speaker": "A",
+                "message": "Yes, I don't face it 100%."
+            },
+            {
+                "speaker": "B",
+                "message": "Thank you. So don't tell me you base your life on 100% proof. You don't. None of us do. That's not possible. You can't. You can't do."
+            }
+        ]
+    }
+]

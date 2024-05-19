@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS for chat container */
+        .chat-container {
+            width: 400px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+            height: 300px;
+        }
+
+        /* CSS for chat bubbles */
+        .chat-bubble {
+            display: inline-block;
+            max-width: 80%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* CSS for user chat bubble */
+        .user-bubble {
+            background-color: #99ccff;
+            float: right;
+        }
+
+        /* CSS for bot chat bubble */
+        .bot-bubble {
+            background-color: #ccff99;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container" id="chatContainer"></div>
+
+    <script>
+        // Function to create a chat bubble
+        function createChatBubble(sender, message) {
+            var chatContainer = document.getElementById("chatContainer");
+            var chatBubble = document.createElement("div");
+            chatBubble.className = "chat-bubble " + (sender === "A" ? "user-bubble" : "bot-bubble");
+            chatBubble.textContent = message;
+            chatContainer.appendChild(chatBubble);
+            chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to bottom
+        }
+
+        // Function to simulate animated dialogue
+        function simulateDialogue(data) {
+            var dialogue = data[0].dialogue; // Assuming only one dialogue in the JSON data
+            var index = 0;
+            var interval = setInterval(function () {
+                var item = dialogue[index];
+                createChatBubble(item.speaker, item.message);
+                index++;
+                if (index >= dialogue.length) {
+                    clearInterval(interval);
+                    setTimeout(function () {
+                        // Clear chat container and load new dialogue
+                        var chatContainer = document.getElementById("chatContainer");
+                        chatContainer.innerHTML = ""; // Clear chat container
+
+                        // Assuming index 1 contains the dialogue of "Young Sheldon 2"
+                        dialogue = data[1].dialogue;
+                        index = 0;
+                        interval = setInterval(function () {
+                            item = dialogue[index];
+                            createChatBubble(item.speaker, item.message);
+                            index++;
+                            if (index >= dialogue.length) {
+                                clearInterval(interval);
+                            }
+                        }, 1000); // Adjust the interval (in milliseconds) between each chat bubble
+                    }, 5000); // Time in milliseconds before loading the new dialogue
+                }
+            }, 1000); // Adjust the interval (in milliseconds) between each chat bubble
+        }
+
+        // Fetch the JSON data from chat.json
+        fetch("chat.json")
+            .then(response => response.json())
+            .then(jsonData => {
+                // Start the dialogue simulation
+                simulateDialogue(jsonData);
+            })
+            .catch(error => {
+                console.log("Error fetching JSON data:", error);
+            });
+    </script>
+</body>
+</html>
